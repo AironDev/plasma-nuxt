@@ -1,0 +1,247 @@
+/* ### Main Elements ### */
+html {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: block;
+  background: #333333;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+}
+
+/* ### Nuxt ### */
+
+#__nuxt {
+  width: 100%;
+  height: 100%;
+}
+
+.nuxt-progress {
+  box-shadow: 0 0 10px rgba(119, 182, 255, 0.7);
+}
+
+.page-enter-active, .page-leave-active {
+  transition: opacity .5s;
+}
+
+.page-enter, .page-leave-active {
+  opacity: 0;
+}
+
+/* ### Default Layout ### */
+#__layout {
+  height: 100%;
+}
+
+.layout-default {
+  background-color: #FFFFFF;
+  height: 100%;
+  overflow: hidden;
+  margin: 0px;
+  display: flex;
+  box-sizing: border-box;
+}
+
+.layout-row {
+  width: 100%;
+}
+
+.layout-default .ivu-col {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ### Sidebar ### */
+.sidebar {
+  background-color: #4d5250;
+  flex-shrink: 0;
+}
+
+.sidebar-header {
+  background-color: #333333;
+  height: 50px;
+  width: 100%;
+}
+
+.sidebar {
+  z-index: 10;
+}
+
+.sidebar-content,
+.main-content {
+  flex-grow: 1; /*ensures that the container will take up the full height of the parent container*/
+  overflow-y: auto; /*adds scroll to this container*/
+}
+
+.sidebar a {
+  color: #EEEEEE;
+}
+
+.sidebar a:hover {
+  color: #FFFFFF;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+.layout-logo-left {
+  width: 90%;
+  height: 30px;
+  background: transparent;
+  margin: 15px auto;
+}
+
+.logo-sidebar {
+  display: block;
+  height: 40px;
+  width: 90px;
+}
+
+.sidebar .ivu-menu-dark {
+  margin-top: 50px;
+  background: #4d5250;
+}
+
+.sidebar .ivu-menu-dark.ivu-menu-vertical .ivu-menu-item-active:not(.ivu-menu-submenu),
+.sidebar .ivu-menu-dark.ivu-menu-vertical .ivu-menu-submenu-title-active:not(.ivu-menu-submenu) {
+  color: #4688ff;
+  border-left: 4px solid #4688ff;
+  border-right: 0px solid transparent;
+}
+
+.sidebar .ivu-menu-item {
+  border-left: 4px solid transparent;
+}
+
+.sidebar .ivu-menu-dark.ivu-menu-vertical .ivu-menu-item:hover,
+.sidebar .ivu-menu-dark.ivu-menu-vertical .ivu-menu-submenu-title:hover {
+  color: #fff;
+  background: #414644;
+}
+
+.sidebar .ivu-menu-dark.ivu-menu-vertical .ivu-menu-item-active:not(.ivu-menu-submenu),
+.sidebar .ivu-menu-dark.ivu-menu-vertical .ivu-menu-item-active:not(.ivu-menu-submenu):hover,
+.sidebar .ivu-menu-dark.ivu-menu-vertical .ivu-menu-submenu-title-active:not(.ivu-menu-submenu),
+.sidebar .ivu-menu-dark.ivu-menu-vertical .ivu-menu-submenu-title-active:not(.ivu-menu-submenu):hover {
+  background: #373c3a;
+}
+
+.sidebar .ivu-menu-vertical .ivu-menu-item, .ivu-menu-vertical .ivu-menu-submenu-title {
+  padding: 0px 0px;
+}
+
+.sidebar .ivu-menu i {
+  margin-right: 10px;
+}
+
+.sidebar .ivu-menu a {
+  padding: 14px 24px;
+  display: block;
+}
+
+/* ### Topbar ### */
+.topbar-header {
+  color: #FFFFFF;
+  flex-shrink: 0;
+  display: inline-flex;
+  background: #333333;
+  z-index: 20;
+}
+
+.topbar-header a {
+  color: #EEEEEE;
+}
+
+.topbar-right {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  height: 50px;
+}
+
+.topbar-right .username {
+  position: absolute;
+  left: 0px;
+  margin: 16px 0 0 16px;
+}
+
+.topbar-right .avatar {
+  position: relative;
+  top: -7px;
+}
+
+.topbar-right .avatar a {
+  color: #4688ff;
+}
+
+.topbar-right .ivu-avatar {
+  background: #4d5250;
+}
+
+.topbar-right .user-box .ivu-avatar i {
+  font-size: 28px;
+  margin: 0px;
+}
+
+.topbar-right .user-box {
+  margin-right: 25px;
+  padding-top: 10px;
+  color: #EEEEEE;
+}
+
+.topbar-right .user-box i {
+  margin-right: 12px
+}
+
+.topbar-bottom {
+  height: 43px;
+  position: absolute;
+  width: 100%;
+  margin-top: 50px;
+}
+
+.main-content-inner {
+  padding: 50px;
+}
+
+.main-content-inner a i {
+  margin-right: 4px;
+}
+
+/* ### Login ### */
+
+.login-box {
+  max-width: 250px;
+}
+
+.register-box,
+.profile-box {
+  max-width: 300px;
+}
+
+.main-content .ivu-form-item-error-tip {
+  position: relative;
+  padding-bottom: 20px;
+}
+
+/* ### Posts ### */
+.post-list {
+  padding-top: 20px;
+}
+
+/* ### Main Content ### */
+.main-content h1 {
+  padding-bottom: 20px;
+}
+
+.demo-spin-icon-load {
+  animation: ani-demo-spin 1s linear infinite;
+}
+
+@keyframes ani-demo-spin {
+  from { transform: rotate(0deg);}
+  50%  { transform: rotate(180deg);}
+  to   { transform: rotate(360deg);}
+}
