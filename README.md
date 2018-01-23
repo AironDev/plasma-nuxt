@@ -39,6 +39,9 @@ adonis seed
 yarn dev
 ```
 
+### Screenshots:
+<p align="center"><img src="https://i.imgur.com/RottSLC.png" /></p>
+
 ## Usage
 | yarn | Description |
 |------|-------------|
