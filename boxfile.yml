@@ -1,0 +1,13 @@
+run.config:
+  engine: nodejs
+  engine.config:
+      runtime: nodejs-8.9
+      dep_manager: yarn
+      python_version: python-2.7
+
+web.adonis:
+  start: node server.js
+
+# add a postgres database
+data.db:
+  image: nanobox/postgresql:9.5
