@@ -30,7 +30,7 @@ hooks.after.providersBooted(() => {
   * Overwrite JWT expire token
    */
   const Exception = use('Exception')
-  Exception.handle('ExpiredJwtToken', async (error, {response, request, auth}) => {
+  Exception.handle('ExpiredJwtToken', async (error, {response}) => {
     return response.status(266).send('need_refresh_jwt_token')
   })
 

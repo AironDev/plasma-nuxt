@@ -72,7 +72,7 @@ const store = () => new Vuex.Store({
           commit('SET_USER', auth)
           localStorage.setItem('plasma_auth', JSON.stringify(auth))
           this.$axios.setToken(auth.jwt.token, 'Bearer')
-          return true
+          return auth.jwt.token
         } else {
           return false
         }

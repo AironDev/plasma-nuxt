@@ -24,31 +24,14 @@ module.exports = {
 
   plugins: [
     '~/plugins/iview',
+    '~/plugins/axios',
     { src: '~/plugins/nuxt-client-init.js', ssr: false }
   ],
 
   axios: {
-    responseInterceptor: async (response, { store, redirect }) => {
-      if (response.status === 266) {
-        const originalRequest = response.config
-        originalRequest.baseURL = ''
-        originalRequest._retry = true
-        const refresh = await store.dispatch('refreshToken')
-        if(refresh) {
-          originalRequest.headers['Authorization'] = `Bearer ${store.getters.token}`
-          return axios(originalRequest)
-        } else {
-          redirect(301, '/account/login')
-        }
-      }
-      return response
-    },
-
-    redirectError: {
-      401: '/account/login'
-    },
-
-    disableDefaultErrorHandler: false
+    prefix: '/api',
+    proxy: true,
+    credentials: true
   },
 
   /*
