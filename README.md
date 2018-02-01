@@ -9,8 +9,8 @@ SPA Mode active - SSR disabled
 - Add Axios Nuxt Module with JWT configuration
 - Add default Template with sticky header and sidebar with flexible content
 - iView - A high quality UI Toolkit based on Vue.js
-- config/nuxt.js - Add Interceptor for JWT refresh tokens and re-request on expired JWT token
-- start/hooks.js - Add a custom validator for signup | Add a custom exception handler for expired JWT token to signal for the axios interceptor in nuxt.js config
+- resources/plugins/axios.js - Add Interceptor for JWT refresh tokens and re-request on expired JWT token
+- start/hooks.js - Add a custom validator for signup | Add a custom exception handler for expired JWT token to signal for the axios interceptor
 
 
 ## Installation
