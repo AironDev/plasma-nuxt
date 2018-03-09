@@ -26,12 +26,4 @@ hooks.after.providersBooted(() => {
   }
   Validator.extend('strongPassword', strongPassword, 'Minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one special character')
 
-  /*
-  * Overwrite JWT expire token
-   */
-  const Exception = use('Exception')
-  Exception.handle('ExpiredJwtToken', async (error, {response}) => {
-    return response.status(266).send('need_refresh_jwt_token')
-  })
-
 })

@@ -1,12 +1,14 @@
 'use strict'
 
+const BaseExceptionHandler = use('BaseExceptionHandler')
+
 /**
  * This class handles all exceptions thrown during
  * the HTTP request lifecycle.
  *
  * @class ExceptionHandler
  */
-class ExceptionHandler {
+class ExceptionHandler extends BaseExceptionHandler {
   /**
    * Handle exception thrown during the HTTP lifecycle
    *
@@ -19,13 +21,12 @@ class ExceptionHandler {
    * @return {void}
    */
   async handle (error, { request, response, session, view }) {
-    if (error.code === 'E_INVALID_SESSION') {
-      session.flash({ error: 'You must be authenticated to access this page!' })
-
-      return response.redirect('/')
+    // JWT Token expired
+    if (error.code === 'E_JWT_TOKEN_EXPIRED') {
+      return response.status(266).send('need_refresh_jwt_token')
     }
 
-    response.status(error.status).send(error.message)
+    return super.handle(...arguments)
   }
 
   /**
@@ -38,8 +39,7 @@ class ExceptionHandler {
    *
    * @return {void}
    */
-  async report (error, { request }) {
-  }
+  async report (error, { request }) {}
 }
 
 module.exports = ExceptionHandler
